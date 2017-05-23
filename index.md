@@ -1,0 +1,35 @@
+# Python Tutorial
+Python is a big language, and a single course can't possibly cover everything there is to know, but this course will serve you well as a solid foundation for really mastering Python. In this module, we'll give you a high-level overview of the Python language, what it is, and what's so great about it. We'll also give you a bird's eye view of the rest of this course so that you'll have an idea of what's to come.
+# Table of contents
+- Introduction
+ -  Installation
+   - Linux, Windows and Mac
+- Getting Started
+ - REPL(Read-Eval-Print-Loop)
+ - [Data types](DataTypes.html)
+ - [Relational Operators](RelationalOperators.html)
+ - [Conditional Statements](ConditionalStatements.html)
+ - [While Loops](WhileLoops.html)
+ - [For Loops](ForLoops.html)
+ - [Reading input](Input.html)
+- [Collections](Collections.html)
+ - [Strings](Strings.html)
+ - [Bytes](Bytes.html)
+ - [Lists](Lists.html)
+ - [Dictionary](Dict.html)
+- [Modularity](Modularity.html)
+ - [Functions](Functions.html)
+ - [Modules](Modules.html)
+ - [Module Import vs Module Execution](DifferenceBetweenModuleImportandModuleExecution.html)
+ - [Imports](Imports.html)
+ - [Main](Main.html)
+ - [Exercises](ModularityExercises.html)
+- [Program Arguments](ProgramArguments.html)
+- [Documentation](Documentation.html)
+ - [Docstrings](Docstrings.html)
+ - [Comments](Comments.html)
+- [Shebang](Shebang.html)
+- [Objects, id, Parameter Passing Mechanisms](Objects.html)
+ - [Function Arguments](FunctionArgs.html)
+ - [Type System](TypeSystem.html)
+ - [Scopes](Scopes.html)

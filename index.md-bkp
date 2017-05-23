@@ -1,0 +1,95 @@
+# Getting started with Python
+## Importing From the Python Standard Library
+The Standard Library is structured as modules, a topic we'll discuss in depth later in the course. What's important at this stage is to know that you gain access to Standard Library modules using the import keyword. The basic form of importing a module is simply the import keyword followed by a space and the name of the module. For example, let's see how we can use the Standard Library's math module to compute square roots. At the triple arrow prompt we type import math. Since import is the statement which doesn't return a value, Python doesn't print anything if the import succeeds and we immediately return to the prompt. We can access the contents of the imported module by using the name of the module followed by a dot followed by the name of the attribute in the module that you need. Like many object-oriented languages, the dot operator is used to drill down into object structures.
+
+```python
+import math
+```
+
+ The Python import statement has an alternative form that allows us to bring a specific function from a module into the current namespace
+
+```python
+  from math import sqrt
+```
+A third form of the import statement allows us to rename the imported function. This can be useful for reasons of readability or to avoid a namespace clash. Useful as it is, we recommend that this feature be used infrequently and judiciously.
+```python
+  from math import sqrt as sqt
+```
+## Operators
+### Division
+In python3: The single forward slash is a floating-point division operator
+```python
+5/2
+Returns 2.5
+5//2
+Return 2
+```
+## Scalar Types
+Python comes with a number of built-in data types. These include primitive scalar types like integers, as well as collection types like dictionaries
+
+ScalarTypes are
+- int (42 bit)
+- float (64 bit)
+- None (The null object)
+- bool (Ture or False)
+
+Integers in Python are signed,literals in Python are specified in decimal, but may also be specified in binary with a 0b prefix, up top with a 0o prefix, or hexadecimal with a 0x prefix.
+```python
+>>> x=3 #base 10
+3
+>>> x=0b11 # base 2
+3
+>>> x=0o3 # base 8
+3
+>>> x=0x3 # base 16
+3
+# The above all represent numeric 3 with base 10
+```
+###  Construct Integers
+```python
+>>> int(3.5) # Convert float to integer
+3
+>>> int(-3.5)
+3
+>>> int("123") # Convert String to Integer
+123
+>>> int("11",2) # Convert binary string to decimal
+3
+```
+### Construct float
+```python
+>>> 3.141          
+3.141              
+>>> 3e8            
+300000000.0        
+>>> 1.6e-35        
+1.6e-35            
+>>> float(7) #convert integer to float       
+7.0                
+>>> float("1.23") # convert string to float
+1.23               
+>>> float("nan") # not a number  
+nan                
+>>> float("inf") # positive infinity  
+inf                
+>>> float("-inf")  # Negative infinity
+-inf         
+>>> 3+4.5 # integer + float is a float
+7.5             
+```
+### None Type
+
+## Tips and Tricks
+- How exit Python REPL environment?
+
+ To exit the REPL. We do this by sending the end of file control character to Python, although unfortunately the means of sending this character varies across platforms. If you're on Windows, press Control+Z to exit. If you're on Mac or Linux, press Control+D to exit. If you regularly switch between platforms and you accidentally press Control+Z on a Unix-like system, you'll inadvertently suspend the Python interpreter and return to your operating system's shell. To reactivate Python making it a foreground process again, simply run the fg command, and press Enter a couple of times to get the triple arrow Python prompt back
+- How to clear screen in Python shell or REPL environment?
+
+ Press  CTRL+L
+
+- How to get help of Python?
+
+ The REPL has a special function, help, which can retrieve any embedded documentation from objects for which it has been provided such as Standard Library modules. To get help, type simply help.
+help(math) gives the functions available in math library
+To quit the help. Press Q
+help(math.sqrt)
