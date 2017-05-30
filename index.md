@@ -33,3 +33,4 @@ Python is a big language, and a single course can't possibly cover everything th
  - [Function Arguments](FunctionArgs.html)
  - [Type System](TypeSystem.html)
  - [Scopes](Scopes.html)
+-[Collections Indepth](Collections-indepth.html)

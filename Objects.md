@@ -1,9 +1,40 @@
 # Objects
 In Python it's important to remember that everything is an object, primitive objects, functions, modules, and on and on
-
+## calc.py
+```python
+"""Contains basic mathematical functions
+Usage:
+    import calc
+    calc.add(1,2)
+"""
+def add(x, y):
+    """ addes two numbers.
+    Args:
+       x: argument 1
+       y: argument 2
+    Returns:
+       returns of sum of x and y       
+    """
+    return x + y
+```
+```bash
+>>> import calc # import calc module
+>>> type(calc) # calc is object of class module
+<class 'module'>
+>>> dir(calc) # list the attributes in object. It can be built-in or defined functions
+['__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'add'] # add is the only function we defined
+>>> dir(calc.add) # list all the attributes in add function
+['__annotations__', '__call__', '__class__', '__closure__', '__code__', '__defaults__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__get__', '__getattribute__', '__globals__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__kwdefaults__', '__le__', '__lt__', '__module__', '__name__', '__ne__', '__new__', '__qualname__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__']
+>>> calc.add.__doc__ # Returns Documentation of the add function               
+' addes two numbers.\n    Args:\n  
+'                                  
+>>> calc.add.__name__  # Returns the name of the function             
+'add'
+```
+## Variable
  We've already talked about and used variables in Python, but what exactly is a variable? What's going on when we do something as straightforward as assigning an integer to a variable? In this case, Python creates an int object with a value of 1000, an object reference with the name X, and arranges for X to refer to the int 1000 object. If we now modify the value of X with another assignment, what does not happen is a change in the value of the integer object. Integer objects in Python are immutable and cannot be changed. In fact, what happens is that Python creates a new **immutable integer** object with the value 500 and redirects the X reference to point at the new object. We now have no way of reaching the int 1000 object, and the Python garbage collector will reclaim it at some point
 
-# Example
+## Example
 ```python
 x = 1000  # x refers integer object  with value 1000
 print("x=", x)
@@ -15,10 +46,10 @@ print("x=", x)
 x= 1000
 x= 500
 ```
-# id() function
+## id() function
 which returns an integer identifier, which is unique and constant for the lifetime of the object
 Much more commonly used than the id() function is the is operator, which tests for equality of identity. That is it tests whether two references refer to the same object.
-## Example 1
+### Example 1
 ```python
 x = 10
 print("id(x) is ", id(x))
@@ -31,7 +62,7 @@ id(x) is  1371953024
 id(y) is  1371953184
 id(x) == id(y):  False
 ```
-## Example 2
+### Example 2
 ```python
 x = 10
 print("id(x) is ", id(x))
@@ -42,7 +73,7 @@ print("id(x) is ", id(x))
 id(x) is  1371953024
 id(x) is  1371953040
 ```
-## Example 3
+### Example 3
 ```python
 x = [1, 2, 3]
 y = [1, 2, 3]
@@ -63,7 +94,7 @@ x == y True
 - Scalar data types are immutable
 - Collections are mutable
 
-## Example 4
+### Example 4
 ```python
 # Scalar types are immutables
 x = "abc"
@@ -84,10 +115,10 @@ x is y False
 ```
 **Note:** value comparison is something that is defined programmatically. When you define types, you can control how that class determines value equality. In contrast, identity comparison is defined by the language, and you can't change that behavior.
 
-# Argument passing
+## Argument passing
 Objects are passed by copy of reference.
 
-## Example 1
+### Example 1
 ```python
 def modify(y):
     y = y + 1  # integer objects are immutable. New object get created and reference is assigned to y
@@ -103,7 +134,7 @@ x=  20
 y= 21
 x= 20
 ```
-## Example 2
+### Example 2
 ```python
 def modify(y):  # y contains copy of reference x
     y.append(4)  # y refer to same object as x
@@ -118,7 +149,7 @@ x= [1, 2, 3]
 y= [1, 2, 3, 4]
 x= [1, 2, 3, 4]
 ```
-## Example 3
+### Example 3
 ```python
 def modify(y):  # y contains copy of reference x
     y = [1, 2, 3, 4]  # a new list object is created and assigned to y
@@ -133,7 +164,7 @@ x= [1, 2, 3]
 y= [1, 2, 3, 4]
 x= [1, 2, 3]
 ```
-## Example 4
+### Example 4
 ```python
 def modify(y):  # y contains copy of reference x
     y = None  # y is referring to NoneType but x reference is still alive
@@ -148,9 +179,9 @@ x= [1, 2, 3]
 y= None
 x= [1, 2, 3]
 ```
-# Return statement
+## Return statement
 It returns the same copied reference no new copy of object is created
-## Example1
+### Example1
 ```python
 def modify(y):
     return y  # returns same reference. No new object is created
@@ -163,7 +194,7 @@ print("x == y", x is y)
 x == y True
 x == y True
 ```
-## Example2
+### Example2
 ```python
 def modify(y):
     return [1, 2, 3]  # returns new object
