@@ -208,8 +208,8 @@ start,stop,step argument range(5, 10, 2)
 ```
 **Note:** Because of the strong iteration primitives built into Python, ranges aren't widely used in modern Python code.
 ## List
-
-```bash
+### list_demo.py
+```python
 names = ["dora", "spider man ", "papa smurf", "captain america", "mario"]
 # The first element of the sequence is at index 0
 print("First element in the list", names[0])
@@ -271,6 +271,44 @@ print("find dora", names.index("dora"))
 
 # count the occurance of elements in the list
 print("number of  doras in list", names.count("dora"))
+
+# Find membership
+print("Membership", "mario" in ["dora", "spider man ", "papa smurf", "captain america", "mario"])
+
+# Remove element in list
+del names[4]
+print("Removed mario from the list" , names)
+# Remove element by value
+names.remove("dora")
+print("Removed dora from the list" , names)
+
+x = [1, 2, 3]
+x.insert(0, 0)
+print("inserted element at 0 in the list", x)
+# Converting list to string
+print("Convert list to string: ", "|".join(names))
+
+# concatenation
+x = [1, 2, 3]
+y = [4, 5]
+print("concatenation creates new lists", x + y)
+x += [4, 5]
+print("In-place extension", x)
+x.extend([6])  # Modifies existing list
+print("Extending list", x)
+
+# reverse an element in the list
+x = [1, 2, 3, 4]
+x.reverse()
+print("Reverse elements in the list", x)
+x = [2, 1, 4, 3]
+x.sort()
+print("Sorted list", x)
+
+# sorted function
+x = [2,1,4,3]
+y = sorted(x)
+print("x: ", x, "y: ", y)
 ```
 ```bash
 First element in the list dora
@@ -301,7 +339,39 @@ new_l [0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
 [0, 1, -1]
 find dora 0
 number of  doras in list 1
+Membership True
+Removed mario from the list ['dora', 'spider man ', 'papa smurf', 'captain america']
+Removed dora from the list ['spider man ', 'papa smurf', 'captain america']
+inserted element at 0 in the list [0, 1, 2, 3]
+Convert list to string:  spider man |papa smurf|captain america
+concatenation creates new lists [1, 2, 3, 4, 5]
+In-place extension [1, 2, 3, 4, 5]
+Extending list [1, 2, 3, 4, 5, 6]
+Reverse elements in the list [4, 3, 2, 1]
+Sorted list [1, 2, 3, 4]
+x:  [2, 1, 4, 3] y:  [1, 2, 3, 4]
+```
+## dict
+- key must be mutable
+- Values can be mutable
+- Don't depend upon the order in which elements are stored in dict
 
+```python
+capitals = {"india":"delhi", "america":"washington"}
+print("Access values using key: ", capitals["india"])
+
+name_age = [('dora', 5), ('mario', 10)]
+d = dict(name_age)
+print("Dict", d)
+d = dict(a=1, b=2, c=3)
+print("Dict", d)
+
+#copy dictonary
+```
+```bash
+Access values using key:  delhi
+Dict {'dora': 5, 'mario': 10}
+Dict {'a': 1, 'b': 2, 'c': 3}
 ```
 
 ### [index](index.html)
