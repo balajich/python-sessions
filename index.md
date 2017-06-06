@@ -34,3 +34,6 @@ Python is a big language, and a single course can't possibly cover everything th
  - [Type System](TypeSystem.html)
  - [Scopes](Scopes.html)
 - [Collections Indepth](Collections-indepth.html)
+- [Collection Summary](CollectionsSummary.html)
+- [Exception Handling](ExceptionHandlingIntro.html)
+ - [Exception and Control Flow](ExceptionControlFlow.html)

@@ -366,12 +366,210 @@ print("Dict", d)
 d = dict(a=1, b=2, c=3)
 print("Dict", d)
 
-#copy dictonary
+# copying method 1
+e = d.copy()
+print("Copied dictionary e: ", e)
+
+# copying method 2
+f = dict(d)
+print("Copied dictionary f: ", f)
+
+# updating dict
+g = dict(a=-1, b=-2)
+print("d", d)
+print("g", g)
+d.update(g)
+print("Updated dictionary d with g", d)
+
+# Iterating through dictionary
+d = dict(a=1, b=2, c=3)
+# Note key are retrieved in arbitrary order
+for key in d:
+    print(d[key])
+
+# iterate through values
+# There is no efficient way to get keys from values
+print("Get values for dictionary with out keys")
+for value in d.values():
+    print(value)
+
+print("Get items for dictionary")
+# Each key-value pair in a dictionary is called an item, and we can get ahold of an iterable view of the items using the items() dictionary method.
+for key, value in d.items():
+    print(key, value)
+
+# member ship operator works only on keys
+d = dict(a=1, b=2, c=3)
+print("a" in d)
+print("e" in d)
+
+# Remove an item from the dictionary
+d = dict(a=1, b=2, c=3)
+print("d", d)
+print("Removing item c from dictionary")
+del d['c']
+print(d)
+
+# Keys are immutable and values can be modified
+d = dict(a=1, b=2, c=3)
+print("d", d)
+print("Modify element value of item a")
+d["a"] = -1
+print("d", d)
+
+# Pretty printing
+print("Pretty printing")
+from pprint import pprint as pp
+d = dict(a=1, b=2, c=3)
+pp(d)
+
 ```
 ```bash
 Access values using key:  delhi
 Dict {'dora': 5, 'mario': 10}
 Dict {'a': 1, 'b': 2, 'c': 3}
+Copied dictionary e:  {'a': 1, 'b': 2, 'c': 3}
+Copied dictionary f:  {'a': 1, 'b': 2, 'c': 3}
+d {'a': 1, 'b': 2, 'c': 3}
+g {'a': -1, 'b': -2}
+Updated dictionary d with g {'a': -1, 'b': -2, 'c': 3}
+1
+2
+3
+Get values for dictionary with out keys
+1
+2
+3
+Get items for dictionary
+a 1
+b 2
+c 3
+True
+False
+d {'a': 1, 'b': 2, 'c': 3}
+Removing item c from dictionary
+{'a': 1, 'b': 2}
+d {'a': 1, 'b': 2, 'c': 3}
+Modify element value of item a
+d {'a': -1, 'b': 2, 'c': 3}
+Pretty printing
+{'a': 1, 'b': 2, 'c': 3}
 ```
+## set
+The set data type is an unordered collection of unique elements. The collection is mutable in so far as elements can be added and removed from the set, but each element must itself be immutable very much like the keys of a dictionary
 
+The set() constructor can create a set from any iterable series such as a list
+
+### set_demo.py
+```python
+print("Set")
+s = {2, 1, 3, 4}
+print(s)
+print(type(s))
+
+print("Empty set")
+s = set()
+print(s)
+
+print("Set constructor")
+print("Constructing set from a list")
+s = set([1, -1, 4])
+print(s)
+
+print("Sets remove duplicate elements")
+s = set([1, 1, 1, 1, 2])
+print(s)
+
+print("Iterating through set")
+# Note order is arbitrary
+for i in {1, 2, 3, 4, 5}:
+    print(i)
+
+# Membership operator
+print("Membership operator")
+print(1 in {1, 2, 3, 4, 5})
+print(1 not in {1, 2, 3, 4, 5})
+
+# adding element into set
+print("adding element into set")
+s = {1, 2}
+print(s)
+s.add(3)
+print(s)
+# Adding an element that already exists has no effect, and neither does it produce an error
+s = {1, 2}
+s.add(1)
+print(s)
+
+# Multiple elements can be added in one go using updated method
+s = {1, 2}
+s.update({3, 4})
+print(s)
+
+# delete element from a set
+print("Delete element in a set")
+s = {1, 2}
+s.remove(1)  # This can lead to error when there is not element
+print(s)
+
+print("Delete element in a set with out error")
+s = {1, 2}
+s.discard(3)  # This will not lead to any error
+print(s)
+
+# Copying sets
+print("Copying sets, its a shallow copy")
+s = {1, 2}
+s1 = s.copy()
+s2 = set(s)
+print("s", s)
+print("s1", s1)
+print("s2", s2)
+
+# Liner algebra
+print("Set operations")
+s1 = {1, 2}
+s2 = {1, 4}
+print("s1 intersection s2", s1.intersection(s2))
+print("s1 union s2", s1.union(s2))
+
+```
+```bash
+Set
+{1, 2, 3, 4}
+<class 'set'>
+Empty set
+set()
+Set constructor
+Constructing set from a list
+{1, 4, -1}
+Sets remove duplicate elements
+{1, 2}
+Iterating through set
+1
+2
+3
+4
+5
+Membership operator
+True
+False
+adding element into set
+{1, 2}
+{1, 2, 3}
+{1, 2}
+{1, 2, 3, 4}
+Delete element in a set
+{2}
+Delete element in a set with out error
+{1, 2}
+Copying sets, its a shallow copy
+s {1, 2}
+s1 {1, 2}
+s2 {1, 2}
+Set operations
+s1 intersection s2 {1}
+s1 union s2 {1, 2, 4}
+
+```
 ### [index](index.html)

@@ -2,7 +2,7 @@
 <html>
   <head>
       <meta charset="utf-8" />
-      <title>index</title>
+      <title>CollectionSummary</title>
       <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(171, 178, 191); overflow: auto; background-color: rgb(40, 44, 52); }
 .markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
 .markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
@@ -484,61 +484,53 @@ pre.editor-colors .fold-marker:after {
 }
 </style>
   </head>
-  <body class='markdown-preview' data-use-github-style><h1 id="python-tutorial">Python Tutorial</h1>
-<p>Python is a big language, and a single course can&#39;t possibly cover everything there is to know, but this course will serve you well as a solid foundation for really mastering Python. In this module, we&#39;ll give you a high-level overview of the Python language, what it is, and what&#39;s so great about it. We&#39;ll also give you a bird&#39;s eye view of the rest of this course so that you&#39;ll have an idea of what&#39;s to come.</p>
-<h1 id="table-of-contents">Table of contents</h1>
+  <body class='markdown-preview' data-use-github-style><h1 id="collection-summary">Collection Summary</h1>
+<p> In Python, a protocol is a set of operations or methods that a type must support if it is to implement that protocol. Protocols needn&#39;t be defined in the source code as separate interfaces or base classes as they would in an anomaly typed language such as C# or Java. It&#39;s sufficient to simply have an object provide functioning implementations of those operations. We can organize the different collections we&#39;ve encountered in Python according to which protocols they support. Support for protocol demands specific behavior from a type.</p>
+<h2 id="collection-protocols">Collection protocols</h2>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th style="text-align:center">Implementing Collections</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Container</td>
+<td style="text-align:center">str, list, range, tuple, bytes, set, dict</td>
+</tr>
+<tr>
+<td>Sized</td>
+<td style="text-align:center">str, list, range, tuple, bytes, set, dict</td>
+</tr>
+<tr>
+<td>Iterable</td>
+<td style="text-align:center">str, list, range, tuple, bytes, set, dict</td>
+</tr>
+<tr>
+<td>Sequence</td>
+<td style="text-align:center">str, list, range, tuple, bytes, set, dict</td>
+</tr>
+<tr>
+<td>Mutable Sequence</td>
+<td style="text-align:center">list</td>
+</tr>
+<tr>
+<td>Mutable Set</td>
+<td style="text-align:center">set</td>
+</tr>
+<tr>
+<td>Mutable Mapping</td>
+<td style="text-align:center">dict</td>
+</tr>
+</tbody>
+</table>
+<h2 id="protocols">Protocols</h2>
+<p>To implement a protocol, objects must support certain operations.</p>
 <ul>
-<li>Introduction<ul>
-<li>Installation<ul>
-<li>Linux, Windows and Mac</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Getting Started<ul>
-<li>REPL(Read-Eval-Print-Loop)</li>
-<li><a href="DataTypes.html">Data types</a></li>
-<li><a href="RelationalOperators.html">Relational Operators</a></li>
-<li><a href="ConditionalStatements.html">Conditional Statements</a></li>
-<li><a href="WhileLoops.html">While Loops</a></li>
-<li><a href="ForLoops.html">For Loops</a></li>
-<li><a href="Input.html">Reading input</a></li>
-</ul>
-</li>
-<li><a href="Collections.html">Collections</a><ul>
-<li><a href="Strings.html">Strings</a></li>
-<li><a href="Bytes.html">Bytes</a></li>
-<li><a href="Lists.html">Lists</a></li>
-<li><a href="Dict.html">Dictionary</a></li>
-</ul>
-</li>
-<li><a href="Modularity.html">Modularity</a><ul>
-<li><a href="Functions.html">Functions</a></li>
-<li><a href="Modules.html">Modules</a></li>
-<li><a href="DifferenceBetweenModuleImportandModuleExecution.html">Module Import vs Module Execution</a></li>
-<li><a href="Imports.html">Imports</a></li>
-<li><a href="Main.html">Main</a></li>
-<li><a href="ModularityExercises.html">Exercises</a></li>
-</ul>
-</li>
-<li><a href="ProgramArguments.html">Program Arguments</a></li>
-<li><a href="Documentation.html">Documentation</a><ul>
-<li><a href="Docstrings.html">Docstrings</a></li>
-<li><a href="Comments.html">Comments</a></li>
-</ul>
-</li>
-<li><a href="Shebang.html">Shebang</a></li>
-<li><a href="Objects.html">Objects, id, Parameter Passing Mechanisms</a><ul>
-<li><a href="FunctionArgs.html">Function Arguments</a></li>
-<li><a href="TypeSystem.html">Type System</a></li>
-<li><a href="Scopes.html">Scopes</a></li>
-</ul>
-</li>
-<li><a href="Collections-indepth.html">Collections Indepth</a></li>
-<li><a href="CollectionsSummary.html">Collection Summary</a></li>
-<li><a href="ExceptionHandlingIntro.html">Exception Handling</a><ul>
-<li><a href="ExceptionControlFlow.html">Exception and Control Flow</a></li>
-</ul>
-</li>
+<li>The container protocol requires that membership testing using the in and not in operators be supported.</li>
+<li>The size protocol requires that the number of elements in a collection can be determined by passing the collection to the built-in len function</li>
+<li>Iterable Protocol can produce an iterator with iter(s)</li>
+<li>The sequence protocol requires that items can be retrieved using square brackets with an integer index, that items can be searched for with the index method, that items can be counted with the count method, and that a reversed copy of the sequence can be produced with the reversed built-in function</li>
 </ul></body>
 </html>
