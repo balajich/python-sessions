@@ -1,0 +1,5 @@
+print('hello', 'world')
+l = list()
+l.append(1)
+l.append(2)
+print(l)
